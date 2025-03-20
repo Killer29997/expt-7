@@ -18,7 +18,7 @@ public class SeleniumTest {
     private WebDriver driver;
     private String testUrl = System.getProperty("testUrl", "https://youtube.com");
     private String browser = System.getProperty("browser", "chrome");
-    private String driversPath = "C:\\Users\\PSYCHOPENGUIN\\Downloads\\drivers";
+    private String driversPath = System.getProperty("driversPath", "C:\\Users\\PSYCHOPENGUIN\\Downloads\\drivers");
 
     @BeforeMethod
     public void setup() {
