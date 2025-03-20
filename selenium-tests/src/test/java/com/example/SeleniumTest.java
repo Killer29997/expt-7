@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 public class SeleniumTest {
     private WebDriver driver;
@@ -48,9 +49,8 @@ public class SeleniumTest {
     @Test
     public void testWebsiteTitle() throws Exception {
         driver.get(testUrl);
-        // Capture a screenshot of the test URL page
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        Files.copy(screenshot.toPath(), Path.of("screenshot.png"));
+        Files.copy(screenshot.toPath(), Path.of("screenshot.png"), StandardCopyOption.REPLACE_EXISTING);
         Assert.assertFalse(driver.getTitle().isEmpty(), "Page title should not be empty");
     }
 
