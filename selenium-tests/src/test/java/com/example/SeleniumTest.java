@@ -24,7 +24,7 @@ public class SeleniumTest {
     public void setup() {
         testUrl = System.getProperty("testUrl", "").trim();
         if (testUrl.isEmpty()) {
-            testUrl = "https://chatgpt.com";
+            testUrl = "https://youtube.com";
         }
         browser = System.getProperty("browser", "chrome").trim();
         if (browser.isEmpty()) {
